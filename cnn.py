@@ -13,6 +13,8 @@ transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)), 
 ])
+
+print("preparing data...")
 trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)
 dataset_size = len(trainset)
 indices = list(range(dataset_size))
@@ -66,7 +68,7 @@ class Net(nn.Module):
 net = Net()
 print(net)
 criterion = nn.CrossEntropyLoss()
-optim.
+# optim.
 optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 
 
